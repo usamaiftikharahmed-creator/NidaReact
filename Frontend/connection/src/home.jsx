@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Navbar from "./navbar";
+import Navbar from "./Navbar";
 
 export default function Home() {
     const [products, setProducts] = useState([]);
@@ -8,7 +8,7 @@ export default function Home() {
 
     useEffect(() => {
         axios
-            .get("http://localhost:5000/api/products")
+            .get("https://nidareact-production.up.railway.app/api/products")
             .then((res) => {
                 setProducts(res.data);
                 setLoading(false);
