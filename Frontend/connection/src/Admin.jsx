@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Navbar from "./Navbar";
+import Navbar from "./navbar";
 
 export default function Admin() {
     const navigate = useNavigate();
