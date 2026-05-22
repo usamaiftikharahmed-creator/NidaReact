@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Navbar from "./navbar";
+import Navbar from "./Navbar";
 
 export default function Admin() {
     const navigate = useNavigate();
@@ -28,7 +28,7 @@ export default function Admin() {
     const fetchProducts = async () => {
         setLoading(true);
         try {
-            const res = await axios.get("http://localhost:5000/api/products");
+            const res = await axios.get("https://nidareact-production.up.railway.app/api/products");
             setProducts(res.data);
         } catch {
             showToast("Failed to load products", "error");
@@ -65,7 +65,7 @@ export default function Admin() {
         if (form.image) data.append("image", form.image);
 
         try {
-            const res = await axios.post("http://localhost:5000/api/products", data);
+            const res = await axios.post("https://nidareact-production.up.railway.app/api/products", data);
             setProducts([res.data, ...products]);
             resetForm();
             showToast("Product added!");
@@ -77,7 +77,7 @@ export default function Admin() {
     /* ============ DELETE ============ */
     const deleteProduct = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/products/${id}`);
+            await axios.delete(`https://nidareact-production.up.railway.app/api/products/${id}`);
             setProducts(products.filter((p) => p._id !== id));
             setConfirmId(null);
             showToast("Product deleted!");
@@ -112,7 +112,7 @@ export default function Admin() {
 
         try {
             const res = await axios.put(
-                `http://localhost:5000/api/products/${form.id}`,
+                `https://nidareact-production.up.railway.app/api/products/${form.id}`,
                 data
             );
             setProducts(
