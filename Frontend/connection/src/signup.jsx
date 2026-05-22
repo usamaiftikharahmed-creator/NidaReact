@@ -12,7 +12,7 @@ export default function Signup() {
         },
         onSubmit: async (values) => {
             try {
-                const res = await fetch("http://localhost:5000/api/register", {
+                const res = await fetch("https://nidareact-production.up.railway.app/api/register", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
