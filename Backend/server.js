@@ -208,7 +208,7 @@ const cloudinary = require("cloudinary").v2;
 const app = express();
 
 app.use(cors({
-    origin: "https://nida-react-9172.vercel.app"
+    origin: "https://nida-react-9i72.vercel.app"
 }));
 app.use(express.json());
 
